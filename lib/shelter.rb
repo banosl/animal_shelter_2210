@@ -7,6 +7,7 @@ class Shelter
         @name = name
         @capacity = capacity
         @pets = []
+        @pet_count = []
     end
 
 #method for adding pets
@@ -19,6 +20,12 @@ class Shelter
         pets.each do |pet|
             pet.concat("!")
         end
+    end
+
+#method for checking if the shelter is over capacity
+    def over_capacity?
+        @pets.count > @capacity
+       
     end
  
 end
