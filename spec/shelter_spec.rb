@@ -60,7 +60,7 @@ RSpec.describe Shelter do
 # Iteration 3
 
     describe '#over_capacity?' do
-      it 'returns true or false if the shelter has more pets than the capacity' do
+      it 'returns false if the shelter has fewer pets than the capacity' do
         
         #Test 1
 
@@ -72,8 +72,19 @@ RSpec.describe Shelter do
         shelter.over_capacity?
 
         expect(shelter.over_capacity?).to be false
+      
+      end
+    end
+
+    describe '#over_capacity?' do
+      it 'returns true if the shelter has more pets than the capacity' do
 
         #Test 2
+
+        shelter = Shelter.new('Denver Animals Shelter', 3)
+
+        shelter.add_pet ('Salem')
+        shelter.add_pet ('Beethoven')
 
         shelter.add_pet ('Luca')
         shelter.add_pet ('Kuma')
@@ -83,7 +94,7 @@ RSpec.describe Shelter do
         shelter.over_capacity?
 
         expect(shelter.over_capacity?).to be true
-        
+
       end
     end
 
