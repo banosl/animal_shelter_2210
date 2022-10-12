@@ -9,5 +9,9 @@ class Shelter
         @pets = []
     end
 
-
+#method for adding pets
+    def add_pet (pet)
+        @pets << pet
+    end
+ 
 end
