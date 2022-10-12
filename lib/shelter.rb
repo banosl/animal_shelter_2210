@@ -13,5 +13,12 @@ class Shelter
     def add_pet (pet)
         @pets << pet
     end
+
+#method for calling pets with '!'
+    def call_pets
+        pets.each do |pet|
+            pet.concat("!")
+        end
+    end
  
 end
